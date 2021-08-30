@@ -26,36 +26,40 @@ import java.util.stream.Collectors;
  */
 @Slf4j
 public class Test4 {
-//    public static void main(String[] args) {
-//        List<People> list = new ArrayList<People>();
-//        People p1 = new People();
-//        p1.setId("1");
-//        p1.setName("张三");
-//        p1.setType("管理员");
-//        p1.setAge(20);
-//        String data = JSONObject.toJSONString(p1);
-//        list.add(p1);
-//        People p2 = new People();
-//        p2.setId("2");
-//        p2.setName("张三");
-//        p2.setType("管理员");
-//        p2.setAge(30);
-//        list.add(p2);
-//        People p3 = new People();
-//        p3.setId("3");
-//        p3.setName("王五");
-//        p3.setType("访客");
-//        p3.setAge(40);
-//        list.add(p3);
-//        People p4 = new People();
-//        p4.setId("4");
-//        p4.setName("马六");
-//        p4.setType("访客");
-//        p4.setAge(50);
-//        list.add(p4);
-//        list = list.stream().collect(Collectors.collectingAndThen(Collectors.toCollection(() -> new TreeSet<>(Comparator.comparing(worker -> worker.getName()))), ArrayList::new));
-//        System.out.println(list);
-//    }
+    public static void main(String[] args) {
+        List<People> list = new ArrayList<People>();
+        People p1 = new People();
+        p1.setId("5");
+        p1.setName("张三");
+        p1.setType("管理员");
+        p1.setAge(20);
+        list.add(p1);
+        People p2 = new People();
+        p2.setId("5");
+        p2.setName("张三");
+        p2.setType("管理员");
+        p2.setAge(30);
+        list.add(p2);
+        People p3 = new People();
+        p3.setId("5");
+        p3.setName("王五");
+        p3.setType("访客");
+        p3.setAge(40);
+        list.add(p3);
+        People p4 = new People();
+        p4.setId("5");
+        p4.setName("马六");
+        p4.setType("访客");
+        p4.setAge(50);
+        list.add(p4);
+        System.out.println(list);
+        for (People alarm : list) {
+            if ("5".equals(alarm.getId())) {
+                alarm.setName("徐安点");
+            }
+        }
+        System.out.println(list);
+    }
 //
 //
 //
@@ -155,11 +159,13 @@ public class Test4 {
 //            push.add(pushCommand.get(i));
 //        }
 //    }
-    public static void main(String[] args) {
-        List<People> list = new ArrayList<>();
-        while(true){
-            list.add(new People());
-        }
-    }
+//    public static void main(String[] args) {
+//        StringBuffer deviceSn = new StringBuffer();
+//        for (int i = 1; i <= 10; i++) {
+//            deviceSn.append(1);
+//            deviceSn.append(",");
+//        }
+//        System.out.println(deviceSn.substring(0,deviceSn.length()-1));
+//    }
 
 }
