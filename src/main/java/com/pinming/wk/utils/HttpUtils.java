@@ -1,6 +1,5 @@
 package com.pinming.wk.utils;
 
-import com.pinming.wk.config.ConstantConf;
 import okhttp3.*;
 import org.apache.commons.codec.digest.DigestUtils;
 import org.apache.http.client.methods.CloseableHttpResponse;
@@ -17,30 +16,11 @@ import java.io.InputStreamReader;
 import java.io.OutputStreamWriter;
 import java.net.URL;
 import java.net.URLConnection;
-import java.text.SimpleDateFormat;
-import java.util.Date;
 import java.util.concurrent.TimeUnit;
 
 public class HttpUtils {
 
     private static final MediaType MEDIA_TYPE_JSON = MediaType.parse("application/json; charset=utf-8");
-
-    /**
-     * 构造通用参数timestamp、sig和respDataType
-     *
-     * @return
-     */
-    public static String createCommonParam() {
-        // 时间戳
-        Long timestamp = System.currentTimeMillis();
-
-
-        // 签名
-        String sig = DigestUtils.md5Hex(ConstantConf.ACCOUNT_SID + ConstantConf.AUTH_TOKEN + timestamp);
-
-
-        return "&timestamp=" + timestamp + "&sig=" + sig + "&respDataType=" + ConstantConf.RESP_DATA_TYPE;
-    }
 
 
     /**
