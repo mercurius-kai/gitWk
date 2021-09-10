@@ -52,13 +52,8 @@ public class Test4 {
         p4.setType("访客");
         p4.setAge(50);
         list.add(p4);
-        System.out.println(list);
-        for (People alarm : list) {
-            if ("5".equals(alarm.getId())) {
-                alarm.setName("徐安点");
-            }
-        }
-        System.out.println(list);
+
+        System.out.println(list.stream().sorted(Comparator.comparing(People::getAge).reversed()).collect(Collectors.toList()));
     }
 //
 //
@@ -167,5 +162,24 @@ public class Test4 {
 //        }
 //        System.out.println(deviceSn.substring(0,deviceSn.length()-1));
 //    }
+//    public static void main(String[] args) {
+//        System.out.println(getbeforeDate(6));
+//    }
+//
+//    /*
+//     * 过去第几天的凌晨0：0：0 时间戳
+//     * */
+//    public static long getbeforeDate(int past) {
+//        Calendar calendar = Calendar.getInstance();
+//        calendar.set(Calendar.DAY_OF_YEAR, calendar.get(Calendar.DAY_OF_YEAR) - past);
+//        calendar.set(Calendar.HOUR_OF_DAY, 0);
+//        calendar.set(Calendar.MINUTE, 0);
+//        calendar.set(Calendar.SECOND, 0);
+//        calendar.set(Calendar.MILLISECOND, 0);
+//        Date today = calendar.getTime();
+//        long time = today.getTime();
+//        return time;
+//    }
+
 
 }

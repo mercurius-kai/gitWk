@@ -74,6 +74,20 @@ public class DateUtil {
         }
         return null;
     }
+    /*
+     * 过去第几天的凌晨0：0：0 时间戳
+     * */
+    public static long getbeforeDate(int past) {
+        Calendar calendar = Calendar.getInstance();
+        calendar.set(Calendar.DAY_OF_YEAR, calendar.get(Calendar.DAY_OF_YEAR) - past);
+        calendar.set(Calendar.HOUR_OF_DAY, 0);
+        calendar.set(Calendar.MINUTE, 0);
+        calendar.set(Calendar.SECOND, 0);
+        calendar.set(Calendar.MILLISECOND, 0);
+        Date today = calendar.getTime();
+        long time = today.getTime();
+        return time;
+    }
 
     public static Date fomatDateHMS(String date) {
         DateFormat fmt = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
